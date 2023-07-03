@@ -1,3 +1,4 @@
+import EventDispatcher from "../../@shared/event/event-dispatcher";
 import EventDispatcherInterface from "../../@shared/event/event-dispatcher.interface";
 import CustomerAddressChanged from "../event/customer-address-changed.event";
 import CustomerCreatedEvent from "../event/customer-created.event";
@@ -9,7 +10,7 @@ export default class Customer {
   private _address!: Address;
   private _active: boolean = false;
   private _rewardPoints: number = 0;
-  private _eventDispatcher: EventDispatcherInterface
+  private _eventDispatcher: EventDispatcherInterface = new EventDispatcher()
 
   constructor(id: string, name: string) {
     this._id = id;
